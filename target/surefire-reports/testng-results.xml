@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="FirstTestSuite" duration-ms="9815" started-at="2022-11-24T10:39:09Z" finished-at="2022-11-24T10:39:18Z">
+    <groups>
+    </groups>
+    <test name="FirstTest" duration-ms="9784" started-at="2022-11-24T10:39:09Z" finished-at="2022-11-24T10:39:18Z">
+      <class name="com.dice.FirstTest">
+        <test-method status="PASS" signature="methodSetUp()[pri:0, instance:com.dice.FirstTest@23282c25]" name="methodSetUp" is-config="true" duration-ms="4026" started-at="2022-11-24T11:39:09Z" finished-at="2022-11-24T11:39:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- methodSetUp -->
+        <test-method status="PASS" signature="diceTestMethod()[pri:0, instance:com.dice.FirstTest@23282c25]" name="diceTestMethod" duration-ms="5239" started-at="2022-11-24T11:39:13Z" finished-at="2022-11-24T11:39:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- diceTestMethod -->
+        <test-method status="PASS" signature="methodTearDown()[pri:0, instance:com.dice.FirstTest@23282c25]" name="methodTearDown" is-config="true" duration-ms="507" started-at="2022-11-24T11:39:18Z" finished-at="2022-11-24T11:39:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- methodTearDown -->
+      </class> <!-- com.dice.FirstTest -->
+    </test> <!-- FirstTest -->
+    <test name="Regression1" duration-ms="0" started-at="2022-11-24T10:39:18Z" finished-at="2022-11-24T10:39:18Z">
+    </test> <!-- Regression1 -->
+  </suite> <!-- FirstTestSuite -->
+</testng-results>
