@@ -7,7 +7,6 @@
             </class>
         </classes>
     </test>
-
     <test name="SecondTest">
         <classes>
             <class name="com.dice.SecondTest">
@@ -21,6 +20,7 @@
         <classes>
             <class name="com.dice.LogInTest">
                 <methods>
+                    <exclude name="positiveLoginTest"></exclude>
                 </methods>
             </class>
         </classes>

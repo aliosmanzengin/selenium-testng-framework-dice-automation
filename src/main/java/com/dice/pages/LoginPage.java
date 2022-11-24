@@ -9,6 +9,7 @@ public class LoginPage extends BasePageObject<LoginPage> {
     private final By emailField = By.xpath("//*[@id='email']");
     private final By passwordField = By.xpath("//*[@id='password']");
     private final By signinButton = By.xpath("//button[@type='submit']");
+    private final By errorMessage = By.xpath("//span[@data-automation-id='login-failure-help-message']");
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -16,6 +17,10 @@ public class LoginPage extends BasePageObject<LoginPage> {
 
     public void openLoginPage() {
         getPage(URL);
+    }
+
+    public void openDummyPage() {
+        getPage("https://www.amazon.com");
     }
 
     public void fillUpEmailAndPassword(String email, String passwrd) {
@@ -28,5 +33,10 @@ public class LoginPage extends BasePageObject<LoginPage> {
         System.out.println("clicking on signin");
         click(signinButton);
         return new ProfilePage(driver);
+    }
+
+    public String getLoginErrorMessage() {
+        waitForVisibilityOf(errorMessage,10);
+        return getText(errorMessage);
     }
 }
