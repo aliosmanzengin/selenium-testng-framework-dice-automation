@@ -1,8 +1,9 @@
 package com.dice;
 
+import com.dice.base.BaseTest;
 import org.testng.annotations.Test;
 
-public class SecondTest {
+public class SecondTest extends BaseTest {
 
     @Test
     public void linkedinTestMethod() {

@@ -54,7 +54,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-FirstTestSuite">
-                    <span class="test-stats">2 tests</span>
+                    <span class="test-stats">3 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,6 +103,11 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-FirstTestSuite" title="com.dice.FirstTest" hash-for-method="diceTestMethod">diceTestMethod</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-FirstTestSuite" title="com.dice.LogInTest" hash-for-method="positiveLoginTest">positiveLoginTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-FirstTestSuite -->
@@ -132,6 +137,21 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-FirstTestSuite-class-passed -->
+          <div class="suite-FirstTestSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.dice.LogInTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="positiveLoginTest">
+                  </a> <!-- positiveLoginTest -->
+                  <span class="method-name">positiveLoginTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-FirstTestSuite-class-passed -->
         </div> <!-- panel FirstTestSuite -->
         <div panel-name="test-xml-FirstTestSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -144,15 +164,23 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;FirstTestSuite&quot;&gt;
   &lt;test name=&quot;FirstTest&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.dice.FirstTest&quot;&gt;
+      &lt;class name=&quot;com.dice.FirstTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- FirstTest --&gt;
+  &lt;test name=&quot;SecondTest&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.dice.SecondTest&quot;&gt;
         &lt;methods&gt;
           &lt;exclude name=&quot;linkedinTestMethod&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.dice.FirstTest --&gt;
+      &lt;/class&gt; &lt;!-- com.dice.SecondTest --&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- FirstTest --&gt;
-  &lt;test name=&quot;Regression1&quot;&gt;
-  &lt;/test&gt; &lt;!-- Regression1 --&gt;
+  &lt;/test&gt; &lt;!-- SecondTest --&gt;
+  &lt;test name=&quot;LoginTest&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.dice.LogInTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- LoginTest --&gt;
 &lt;/suite&gt; &lt;!-- FirstTestSuite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -167,7 +195,10 @@
                 <span class="test-name">FirstTest (1 class)</span>
               </li>
               <li>
-                <span class="test-name">Regression1 (0 classes)</span>
+                <span class="test-name">SecondTest (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">LoginTest (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -193,16 +224,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'diceTestMethod')
-data.setCell(0, 2, 'com.dice.FirstTest')
-data.setCell(0, 3, 5239);
+data.setCell(0, 1, 'positiveLoginTest')
+data.setCell(0, 2, 'com.dice.LogInTest')
+data.setCell(0, 3, 8423);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'diceTestMethod')
+data.setCell(1, 2, 'com.dice.FirstTest')
+data.setCell(1, 3, 3822);
 window.suiteTableData['FirstTestSuite']= { tableData: data, tableDiv: 'times-div-FirstTestSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 seconds</span>
+              <span class="suite-total-time">Total running time: 12 seconds</span>
               <div id="times-div-FirstTestSuite">
               </div> <!-- times-div-FirstTestSuite -->
             </div> <!-- times-div -->
@@ -221,7 +256,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.dice.FirstTest</span>
+              <span class="ignored-class-name">com.dice.SecondTest</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">linkedinTestMethod</span>
                 <br/>
@@ -242,11 +277,26 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">diceTestMethod</span>
-                <span class="method-start">4026 ms</span>
+                <span class="method-start">3939 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">methodTearDown</span>
-                <span class="method-start">9266 ms</span>
+                <span class="method-start">7764 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.dice.LogInTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">methodSetUp</span>
+                <span class="method-start">8335 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">positiveLoginTest</span>
+                <span class="method-start">10365 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">methodTearDown</span>
+                <span class="method-start">18791 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

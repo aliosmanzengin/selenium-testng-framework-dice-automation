@@ -6,16 +6,18 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
-    WebDriver driver;
+    protected WebDriver driver;
 
     @BeforeMethod
-    public void methodSetUp() {
+    protected void methodSetUp() {
+        System.out.println("setup method working");
         System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver");
         driver = new FirefoxDriver();
     }
 
     @AfterMethod
-    public void methodTearDown() {
+    protected void methodTearDown() {
+        System.out.println("teardown method working");
         driver.close();
     }
 }

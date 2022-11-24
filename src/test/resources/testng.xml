@@ -1,19 +1,28 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="FirstTestSuite" verbose="1" >
-    <test name="FirstTest" >
+<suite name="FirstTestSuite" verbose="1">
+    <test name="FirstTest">
         <classes>
             <class name="com.dice.FirstTest">
-                <methods>
-                    <exclude name="linkedinTestMethod"></exclude>    
-                </methods>
             </class>
         </classes>
     </test>
 
-    <test name="Regression1">
+    <test name="SecondTest">
         <classes>
-
+            <class name="com.dice.SecondTest">
+                <methods>
+                    <exclude name="linkedinTestMethod"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="LoginTest">
+        <classes>
+            <class name="com.dice.LogInTest">
+                <methods>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
