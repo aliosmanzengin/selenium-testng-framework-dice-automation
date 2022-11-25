@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class LogInTest extends BaseTest {
 
-    @Test
+    @Test(priority = 1, groups = {"positive case"})
     public void positiveLoginTest() {
         LoginPage loginPage = new LoginPage(driver, log);
         String expectedPageTitle = "Dashboard Home Feed | Dice.com";
@@ -32,7 +32,7 @@ public class LogInTest extends BaseTest {
         Assert.assertTrue(profilePage.isCorrectProfileLoaded(expectedUsername), "Profile name is not expected");
     }
 
-    @Test(dataProvider = "CsvDataProvider", dataProviderClass = CsvDataProvider.class)
+    @Test(dataProvider = "CsvDataProvider", dataProviderClass = CsvDataProvider.class, priority = 2, groups = {"negative case", "broken"})
     public void negativeLogInTest(Map<String, String> testdata) {
         String expectedErrorMessage = "Email and/or password incorrect.";
         String testNumber = testdata.get("no");
@@ -41,8 +41,6 @@ public class LogInTest extends BaseTest {
         String description = testdata.get("description");
 
         log.info("Test No#" + testNumber + " for " + description + "Where\nEmail:" + email + "\nPassword" + password);
-
-
         LoginPage loginPage = new LoginPage(driver, log);
         loginPage.openLoginPage();
         loginPage.fillUpEmailAndPassword("alizengin.qa@gmail.com", "PAS123Sid.!");

@@ -1,9 +1,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="FirstTestSuite" parallel="tests" thread-count="2">
-
+    <listeners>
+        <listener class-name="com.dice.base.TestListener"></listener>
+    </listeners>
     <test name="LoginTest-FF">
         <parameter name="browser" value="firefox"></parameter>
+        <groups>
+            <run>
+                <exclude name="negative case"></exclude>
+                <exclude name="broken"></exclude>
+            </run>
+        </groups>
         <classes>
             <class name="com.dice.LogInTest">
             </class>
@@ -11,6 +19,12 @@
     </test>
     <test name="LoginTest-CH">
         <parameter name="browser" value="chrome"/>
+        <groups>
+            <run>
+                <exclude name="negative case"></exclude>
+                <exclude name="broken"></exclude>
+            </run>
+        </groups>
         <classes>
             <class name="com.dice.LogInTest">
             </class>

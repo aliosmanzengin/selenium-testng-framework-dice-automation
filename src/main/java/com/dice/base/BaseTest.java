@@ -12,27 +12,20 @@ public class BaseTest {
     protected WebDriver driver;
     protected Logger log;
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     protected void setUpClass(ITestContext context) {
         String testName = context.getCurrentXmlTest().getName();
         log = Logger.getLogger(testName);
     }
 
     @Parameters({"browser"})
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     protected void methodSetUp(String browser) {
         log.info("setup method working");
         driver = BrowserFactory.getDriver(browser, log);
     }
 
-
-//    @BeforeMethod
-//    protected void methodSetUp() {
-//        log.info("setup method working");
-//        System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver");
-//        driver = new FirefoxDriver();
-//    }
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     protected void methodTearDown() {
         log.info("teardown method working");
         driver.close();

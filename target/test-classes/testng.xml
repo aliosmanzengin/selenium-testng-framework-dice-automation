@@ -6,19 +6,18 @@
         <parameter name="browser" value="firefox"></parameter>
         <classes>
             <class name="com.dice.LogInTest">
-            <methods>
-                <include name="positiveLoginTest"></include>
-            </methods>
             </class>
         </classes>
     </test>
     <test name="LoginTest-CH">
         <parameter name="browser" value="chrome"/>
+        <groups>
+            <run>
+                <exclude name="negative case"></exclude>
+            </run>
+        </groups>
         <classes>
             <class name="com.dice.LogInTest">
-            <methods>
-                <include name="positiveLoginTest"></include>
-            </methods>
             </class>
         </classes>
     </test>
