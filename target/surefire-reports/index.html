@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-FirstTestSuite">
-              <span class="suite-name border-passed">FirstTestSuite</span>
+              <span class="suite-name border-skipped">FirstTestSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -54,7 +54,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-FirstTestSuite">
-                    <span class="test-stats">3 tests</span>
+                    <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,26 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">1 method,  1 skipped,  </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-FirstTestSuite" class="hide-methods passed suite-FirstTestSuite"> (hide)</a> <!-- hide-methods passed suite-FirstTestSuite -->
-                      <a href="#" panel-name="suite-FirstTestSuite" class="show-methods passed suite-FirstTestSuite"> (show)</a> <!-- show-methods passed suite-FirstTestSuite -->
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-FirstTestSuite" class="hide-methods skipped suite-FirstTestSuite"> (hide)</a> <!-- hide-methods skipped suite-FirstTestSuite -->
+                      <a href="#" panel-name="suite-FirstTestSuite" class="show-methods skipped suite-FirstTestSuite"> (show)</a> <!-- show-methods skipped suite-FirstTestSuite -->
                     </span>
-                    <div class="method-list-content passed suite-FirstTestSuite">
+                    <div class="method-list-content skipped suite-FirstTestSuite">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-FirstTestSuite" title="com.dice.FirstTest" hash-for-method="diceTestMethod">diceTestMethod</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="skipped.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-FirstTestSuite" title="com.dice.LogInTest" hash-for-method="positiveLoginTest">positiveLoginTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-FirstTestSuite -->
+                    </div> <!-- method-list-content skipped suite-FirstTestSuite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -122,24 +117,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-FirstTestSuite" class="panel FirstTestSuite">
-          <div class="suite-FirstTestSuite-class-passed">
+          <div class="suite-FirstTestSuite-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.dice.FirstTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="diceTestMethod">
-                  </a> <!-- diceTestMethod -->
-                  <span class="method-name">diceTestMethod</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-FirstTestSuite-class-passed -->
-          <div class="suite-FirstTestSuite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="skipped.png"/>
               <span class="class-name">com.dice.LogInTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -148,10 +128,33 @@
                   <a name="positiveLoginTest">
                   </a> <!-- positiveLoginTest -->
                   <span class="method-name">positiveLoginTest</span>
+                  <div class="stack-trace">java.lang.NoClassDefFoundError: org/openqa/selenium/interactions/HasTouchScreen
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:756)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:473)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at com.dice.base.BrowserFactory.getDriver(BrowserFactory.java:16)
+	at com.dice.base.BaseTest.methodSetUp(BaseTest.java:16)
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.interactions.HasTouchScreen
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:387)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 44 more
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-FirstTestSuite-class-passed -->
+          </div> <!-- suite-FirstTestSuite-class-skipped -->
         </div> <!-- panel FirstTestSuite -->
         <div panel-name="test-xml-FirstTestSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -162,25 +165,16 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;FirstTestSuite&quot;&gt;
-  &lt;test name=&quot;FirstTest&quot;&gt;
+  &lt;test name=&quot;LoginTest-CH&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.dice.FirstTest&quot;/&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- FirstTest --&gt;
-  &lt;test name=&quot;SecondTest&quot;&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;com.dice.SecondTest&quot;&gt;
+      &lt;class name=&quot;com.dice.LogInTest&quot;&gt;
         &lt;methods&gt;
-          &lt;exclude name=&quot;linkedinTestMethod&quot;/&gt;
+          &lt;include name=&quot;positiveLoginTest&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.dice.SecondTest --&gt;
+      &lt;/class&gt; &lt;!-- com.dice.LogInTest --&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- SecondTest --&gt;
-  &lt;test name=&quot;LoginTest&quot;&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;com.dice.LogInTest&quot;/&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- LoginTest --&gt;
+  &lt;/test&gt; &lt;!-- LoginTest-CH --&gt;
 &lt;/suite&gt; &lt;!-- FirstTestSuite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -192,13 +186,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">FirstTest (1 class)</span>
-              </li>
-              <li>
-                <span class="test-name">SecondTest (1 class)</span>
-              </li>
-              <li>
-                <span class="test-name">LoginTest (1 class)</span>
+                <span class="test-name">LoginTest-CH (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -224,20 +212,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'positiveLoginTest')
 data.setCell(0, 2, 'com.dice.LogInTest')
-data.setCell(0, 3, 8423);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'diceTestMethod')
-data.setCell(1, 2, 'com.dice.FirstTest')
-data.setCell(1, 3, 3822);
+data.setCell(0, 3, 0);
 window.suiteTableData['FirstTestSuite']= { tableData: data, tableDiv: 'times-div-FirstTestSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 12 seconds</span>
+              <span class="suite-total-time">Total running time: 0 ms</span>
               <div id="times-div-FirstTestSuite">
               </div> <!-- times-div-FirstTestSuite -->
             </div> <!-- times-div -->
@@ -256,9 +240,9 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.dice.SecondTest</span>
+              <span class="ignored-class-name">com.dice.LogInTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">linkedinTestMethod</span>
+                <span class="ignored-method-name">negativeLogInTest</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -270,34 +254,13 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.dice.FirstTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">methodSetUp</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">diceTestMethod</span>
-                <span class="method-start">3939 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">methodTearDown</span>
-                <span class="method-start">7764 ms</span>
-              </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
               <div class="chronological-class-name">com.dice.LogInTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">methodSetUp</span>
-                <span class="method-start">8335 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">methodSetUp(chrome)</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">positiveLoginTest</span>
-                <span class="method-start">10365 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">methodTearDown</span>
-                <span class="method-start">18791 ms</span>
-              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

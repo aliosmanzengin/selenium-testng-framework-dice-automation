@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="20.425" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="2.933" tests="2" errors="0" skipped="1" failures="1">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_321.jdk/Contents/Home/jre/lib"/>
@@ -60,6 +60,18 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="diceTestMethod" classname="com.dice.FirstTest" time="3.83"/>
-  <testcase name="positiveLoginTest" classname="com.dice.LogInTest" time="8.424"/>
+  <testcase name="methodSetUp" classname="com.dice.LogInTest" time="2.845">
+    <failure message="org/openqa/selenium/interactions/HasTouchScreen" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: org/openqa/selenium/interactions/HasTouchScreen
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.interactions.HasTouchScreen
+</failure>
+    <system-out><![CDATA[setup method working
+]]></system-out>
+    <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+]]></system-err>
+  </testcase>
+  <testcase name="positiveLoginTest" classname="com.dice.LogInTest" time="0">
+    <skipped message="org/openqa/selenium/interactions/HasTouchScreen"/>
+  </testcase>
 </testsuite>
