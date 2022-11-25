@@ -1,14 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="FirstTestSuite" verbose="1">
+<suite name="FirstTestSuite" parallel="tests" thread-count="2">
 
     <test name="LoginTest-FF">
         <parameter name="browser" value="firefox"></parameter>
         <classes>
             <class name="com.dice.LogInTest">
-            <methods>
-                <include name="positiveLoginTest"></include>
-            </methods>
             </class>
         </classes>
     </test>
@@ -16,9 +13,6 @@
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.dice.LogInTest">
-            <methods>
-                <include name="positiveLoginTest"></include>
-            </methods>
             </class>
         </classes>
     </test>

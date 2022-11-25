@@ -13,7 +13,7 @@ public class LogInTest extends BaseTest {
 
     @Test
     public void positiveLoginTest() {
-        LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage(driver, log);
         String expectedPageTitle = "Dashboard Home Feed | Dice.com";
         String expectedUsername = "Ali Osman Zengin";
         // 1st - Open dice login page
@@ -24,7 +24,7 @@ public class LogInTest extends BaseTest {
         ProfilePage profilePage = loginPage.pushSignInButton();
         profilePage.waitForProfilePageToLoad();
         // Verifications: -Title -Profile Name
-        System.out.println("verifying");
+        log.info("verifying");
         String actualPageTitle = profilePage.getTitle();
         Assert.assertTrue(expectedPageTitle.equals(actualPageTitle), "Page title is not matching!" +
                 "\nactual page title is: " + actualPageTitle +
@@ -40,10 +40,10 @@ public class LogInTest extends BaseTest {
         String password = testdata.get("password");
         String description = testdata.get("description");
 
-        System.out.println("Test No#" + testNumber + " for " + description + "Where\nEmail:" + email + "\nPassword" + password);
+        log.info("Test No#" + testNumber + " for " + description + "Where\nEmail:" + email + "\nPassword" + password);
 
 
-        LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage(driver, log);
         loginPage.openLoginPage();
         loginPage.fillUpEmailAndPassword("alizengin.qa@gmail.com", "PAS123Sid.!");
         loginPage.pushSignInButton();

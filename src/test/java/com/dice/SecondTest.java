@@ -8,6 +8,6 @@ public class SecondTest extends BaseTest {
     @Test
     public void linkedinTestMethod() {
         driver.get("https://www.linkedin.com");
-        System.out.println("Linkedin Opened. Test Passed!");
+        log.info("Linkedin Opened. Test Passed!");
     }
 }

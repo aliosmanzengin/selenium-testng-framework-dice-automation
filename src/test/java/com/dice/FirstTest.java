@@ -9,7 +9,7 @@ public class FirstTest extends BaseTest {
     public void diceTestMethod() {
         //open dice.com
         driver.get("https://www.dice.com");
-        System.out.println("Dice Opened. Test Passed!");
+        log.info("Dice Opened. Test Passed!");
     }
 }
 

@@ -1,14 +1,16 @@
 package com.dice.base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BrowserFactory {
 
-    public static WebDriver getDriver(String browser) {
+    public static WebDriver getDriver(String browser, Logger log) {
         WebDriver driver = null;
+        log.info("Starting " + browser + " driver.");
         browser = browser.toLowerCase().trim();
         switch (browser) {
             case "chrome":
@@ -17,7 +19,6 @@ public class BrowserFactory {
                 break;
             default:
                 WebDriverManager.firefoxdriver().setup();
-//                System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver");
                 driver = new FirefoxDriver();
                 break;
         }
